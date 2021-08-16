@@ -1,0 +1,137 @@
+#server:
+#  port: 9000
+#  servlet.context-path: /breb-ifmis
+spring:
+  #  breb-live
+  datasource:
+    username: BREBIFMIS
+    password: BREBIFMIS321#
+    url: jdbc:oracle:thin:@192.168.100.54:1521:brebdb
+    #    url: jdbc:oracle:thin:@123.200.8.37:1521:brebdb
+    #  datasource:
+    #    username: BREBIFMIS
+    #    password: Breb12#ifms
+    #    url: jdbc:oracle:thin:@202.161.191.133:1522:orcl
+    #    IBCS DB
+    #  datasource:
+    #    username: BREBIFMIS
+    #    password: BREBIFMIS123#
+    #    url: jdbc:oracle:thin:@192.168.1.222:1521:orcl
+    #    url: jdbc:oracle:thin:@202.161.191.133:1522:orcl
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      additional-paths: ../admin
+  #  data:
+  #    elasticsearch:
+  #      repositories:
+  #        enabled: true
+  #  elasticsearch:
+  #    rest:
+  #      read-timeout: 100s
+  #      uris: http://localhost:9200
+
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: false
+    hibernate.ddl-auto: update
+    hibernate.naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    generate-ddl: true
+
+  data:
+    jpa:
+      repositories:
+        enabled: true
+
+  #    elasticsearch:
+  #      repositories:
+  #        enabled: true
+  #      cluster-nodes: localhost:9200
+  #      cluster-name: elasticsearch
+  #      client:
+  #        reactive:
+  #          connection-timeout: 100s
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    check-template-location: true
+
+  mail:
+    host: mail.ibcs-primax.com
+    port: 465
+    username: no-reply-breb@ibcs-primax.com
+    password: Br3bn0Tify@%$32!&*
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+      #          starttls:
+      #            enable: true
+      protocol: smtp
+  #      test-connection: false
+
+  #Username:	***@ibcs-primax.com
+  #Password:	Use the email account's password.
+  #Incoming Server:	mail.ibcs-primax.com
+  #IMAP Port: 993 POP3 Port: 995
+  #Outgoing Server:	mail.ibcs-primax.com
+  #SMTP Port: 465
+
+  servlet:
+    multipart:
+      enabled: true # Whether to enable support of multipart uploads.
+      max-file-size: 1MB
+      max-request-size: 10MB
+
+#spring.main.allow-bean-definition-overriding: true
+#file-directory: /data/breb_files/
+#reportJrxmlPath: /home/dev/reports
+
+#breb live directory
+file-directory: C://ClusterStorage//Data//ifmis//images//
+reportJrxmlPath: C://ClusterStorage//Data//ifmis//reports
+
+#ibcs
+#redis.host: 192.168.1.221
+#redis.port: 6379
+#redis.password:
+#  5a1df24cea4b8bcf2655ed47817bc4016f36c7c8a0760b8909a916822c8260b4
+
+#breb live
+#redis.host: 192.168.100.52
+#redis.port: 6379
+#redis.password:
+
+
+#Breb/local #redis.host: 123.200.8.35
+redis.host: localhost
+redis.port: 6379
+redis.password:
+logging.level.org.springframework.web: INFO
+logging.level.guru.springframework.controllers: DEBUG
+logging.level.org.hibernate: ERROR
+
+## # # # # # # # # # # # # # # # # # # # # #
+########       Google Recaptcha    ########
+## # # # # # # # # # # # # # # # # # # # # #
+
+google.recaptcha.url: https://www.google.com/recaptcha/api/siteverify
+#google.recaptcha.key.site: 6Lc1I88UAAAAADpWifrASBG_5kUlidhCGZNM0bxo
+#google.recaptcha.key.secret: 6Lc1I88UAAAAANmmQJbTVbimoLRYCC0xtWCJAYQU
+google.recaptcha.key.site: 6LdZNqcZAAAAALxZk0nlhA5yUAJO2G4Q9LxD4ZNT
+google.recaptcha.key.secret: 6LdZNqcZAAAAAJW8whr-ztnY7VRtszuXr8ki7RUr
+#spring.elasticsearch.rest.read-timeout: 100s
+#elasticsearch.home: D:/dev_tools/elasticsearch-7.5.1
+#server:
+#  servlet:
+#    context-path: /ifmis
+
+
+
